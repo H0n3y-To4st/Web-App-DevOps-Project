@@ -1,0 +1,9 @@
+aks-terraform/variables.tf
+.terraform
+
+!modules/aks-cluster-module/variables.tf
+!modules/networking-module/variables.tf
+
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.lock.hcl
