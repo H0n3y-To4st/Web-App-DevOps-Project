@@ -1,0 +1,43 @@
+# define the deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  # Unique key of the Deployment instance
+  name: flask-app-development
+spec:
+  # app should run concurrently on two replicas within the cluster
+  replicas: 2
+  strategy:
+    # want to use the rolling update strategy
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      # label to uniquely identify the application
+      app: flask-app
+  template:
+    metadata:
+      labels:
+        # Apply this label to pod template
+        app: flask-app
+    spec:
+      containers:
+      - name: flask-app-container
+        ports: 
+        # Expose port 5000
+        - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-app-service
+spec:
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+  selector:
+    app: flask-app
+  type: ClusterIP
