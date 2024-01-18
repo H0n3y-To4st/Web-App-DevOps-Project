@@ -25,6 +25,7 @@ spec:
     spec:
       containers:
       - name: flask-app-container
+        image: coffeecrow/devops-aicore-project:latest # Image pulled from my docker hub
         ports: 
         # Expose port 5000
         - containerPort: 5000
