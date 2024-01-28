@@ -15,15 +15,15 @@ key_vault_url = "https://key-vault-ismah.vault.azure.net/"
 credential = ManagedIdentityCredential()
 secret_client = SecretClient(vault_url=key_vault_url, credential=credential)
 
+# Initialise Flask App
+app = Flask(__name__)
+
 # database connection 
 server = secret_client.get_secret("server-name").value
 database = secret_client.get_secret("database-name").value
 username = secret_client.get_secret("server-username").value
 password = secret_client.get_secret("server-password").value
 driver= '{ODBC Driver 18 for SQL Server}'
-
-# Initialise Flask App
-app = Flask(__name__)
 
 # Create the connection string
 connection_string=f'Driver={driver};\
