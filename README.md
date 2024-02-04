@@ -34,7 +34,7 @@ Welcome to the Web App DevOps Project repo! This application allows you to effic
 - **Data Validation:** Ensure data accuracy and completeness with required fields, date restrictions, and card number validation.
 
 ## Project Architecture
-![architecture](images/architecture.png)
+[![architecture.png](https://i.postimg.cc/tgVHd4wD/image.png)](https://postimg.cc/4KZMssJh)
 
 ## Getting Started
 
