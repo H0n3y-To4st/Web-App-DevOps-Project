@@ -94,6 +94,8 @@ This removed feature allowed users of the application to add a delivery date to 
 - Login to your docker hub account and verify that your image has been uploaded succesfully
 - Test your image by pulling from docker hub and running it in your local environment
 
+![docker-hub](images/docker-hub.png)
+
 ## Terraform
 
 ### Define networking services
@@ -168,6 +170,8 @@ This removed feature allowed users of the application to add a delivery date to 
 
 4. connect to the cluster to verify it has been created successfully and is operational
 
+![cluster](images/cluster.png)
+
 ## Kubernetes
 
 1. **Create the `application-manifest.yaml` file**
@@ -234,10 +238,14 @@ This removed feature allowed users of the application to add a delivery date to 
 - CPU usage - must be triggered when cpu is over 80%
 - Memory working set percentage - must be triggered when memory is over 80%
 
+![alerts](images/alert-rules.png)
+
 ## Key vault
 
 **Create an azure key vault**
 This is where sensitive information will be stored
+
+![key-vault](images/create-key-vault.png)
 
 **Assign key vault administrator role**
 - assign the key vault administrator role to your microsoft entra id
@@ -261,6 +269,8 @@ Assign the key vaults security officer role to the managed identity
 
 **End-to-end testing in AKS**
 - test your application by accessing it locally, ensuring that your app has integrated with Azure key vault successfully
+
+![website](images/website.png)
 
 ## Contributors 
 
