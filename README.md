@@ -185,10 +185,15 @@ This removed feature allowed users of the application to add a delivery date to 
 
 2. **Deploying kubernetes manifests to AKS**
 - ensure you are in the correct context before using the `kubectl apply -f application-manifest.yaml` command to deploy the pods
+- the pods can be viewed using the `kubectl get pods` command
+
+![pods](images/pods.png)
 
 3. **Testing and validating deployments on AKS**
 - to test the deployments use port forwarding using the `kubectl port-forward <pod-name> 5000:5000` command
 - the web application can then be accessed locally at `http://127.0.0.1:5000`
+
+![port-forward](images/port-forward.png)
 
 ## Azure devops
 
@@ -208,11 +213,15 @@ This removed feature allowed users of the application to add a delivery date to 
 - set the pipeline to automatically run each time there is a push to the main branch of your app repo
 - run the pipeline to test the created image 
 
+![build-push](images/build-push.png)
+
 4. **Establish an azure devops AKS connection**
 - create an AKS service connection within azure devops
 
 5. **Configure pipeline for kubernetes deployment**
 - to add the deploy to kubernetes task to your pipeline config use the `deploy kubectl` command
+
+![deploy](images/deploy.png)
 
 6. **Testing and validation of CI/CD pipeline**
 - check the status of your pods by using the `kubectl get pods` command
